@@ -64,6 +64,7 @@ def preprocess_metadata(age, gender):
 
 # User-friendly result
 def get_user_friendly_result(label, confidence):
+    print(f"Label: {label}, Confidence: {confidence}")
     if label == 'Malignant':
         return {
             "result": "There are signs that this could be a malignant lesion. Please consult a certified dermatologist immediately. (Cancerous)",
