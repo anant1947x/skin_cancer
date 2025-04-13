@@ -15,7 +15,6 @@ Current Accuracy - 73-74%
 
 Video Link:- https://drive.google.com/file/d/1zsE8II9oWUNXoy6Bw5OccfVCHBoPtUpL/view  (there was error in video we submitted)
 
-Server is not connected due to memory limit exceeded on render/replit platforms, but the modal is completely ready
 
 🎯 The goal is to support **early and reliable detection** of malignant skin lesions, potentially saving lives through timely diagnosis.
 
