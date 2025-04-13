@@ -9,7 +9,7 @@ import gdown
 import traceback
 
 # Initialize Flask app with root directory for everything
-app = Flask(__name__)
+app = Flask(__name__, template_folder='.')
 CORS(app)
 
 IMG_SIZE = (128, 128)
