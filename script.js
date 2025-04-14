@@ -145,6 +145,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         alert(`Error: ${data.error}`);
                     } else {
                         // Build result screen
+                        console.log("Confidence Score:", data.score);
+
                         const html = `
                             <div class="result-item">
                                 <div class="result-label">Result</div>
