@@ -147,8 +147,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         console.log("Confidence Score:", data.score);
 
                         // Build result screen
-                        console.log("Confidence Score:", data.score);
-
                         const html = `
                             <div class="result-item">
                                 <div class="result-label">Result</div>

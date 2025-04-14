@@ -137,7 +137,6 @@ def predict():
         confidence = avg_pred if avg_pred >= 0.5 else 1 - avg_pred
 
         response = get_user_friendly_result(label, confidence)
-        response['score'] = round(float(confidence), 4)  # Add score to response
         return jsonify(response)
 
     except Exception as e:
