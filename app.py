@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
 import os
@@ -9,7 +9,7 @@ import gdown
 import traceback
 
 # Initialize Flask app with root directory for everything
-app = Flask(__name__, template_folder='.')
+app = Flask(__name__)
 CORS(app)
 
 IMG_SIZE = (128, 128)
@@ -96,7 +96,13 @@ def get_user_friendly_result(label, confidence):
 # Routes
 @app.route('/')
 def home():
-    return render_template('index.html')  # Now expects index.html in root
+    # Serve the index.html file from the root directory
+    return send_from_directory(os.getcwd(), 'index.html')
+
+# Serve static files (CSS, JS, images, etc.) from the root directory
+@app.route('/<filename>')
+def serve_file(filename):
+    return send_from_directory(os.getcwd(), filename)
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -144,5 +150,4 @@ def predict():
         return jsonify({'error': 'Internal Server Error', 'details': str(e)}), 500
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(debug=True)
