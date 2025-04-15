@@ -1,1 +1,1 @@
-web: gunicorn --timeout 120 --workers 4 app:app
+web: gunicorn --timeout 180 --workers 4 --log-level debug app:app
