@@ -127,7 +127,9 @@ document.addEventListener('DOMContentLoaded', function () {
         formData.append('gender', gender);
         formData.append('image', image);
 
-        fetch('https://skin-cancer-308g.onrender.com', {
+        // fetch('http://localhost:5000/predict', {
+            fetch('https://skin-cancer-308g.onrender.com/predict', {
+
             method: 'POST',
             body: formData
         })
@@ -147,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         console.log("Confidence Score:", data.score);
 
                         // Build result screen
-                        console.log("Confidence Score:", data.score);
+                        // console.log("Confidence Score:", data.score);
 
                         const html = `
                             <div class="result-item">

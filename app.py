@@ -74,7 +74,7 @@ def get_user_friendly_result(label, confidence):
                 "Seek medical attention for biopsy and clinical diagnosis."
             ]
         }
-    elif confidence < 0.65:
+    elif confidence < 0.60:
         return {
             "result": "This lesion is likely benign, but it may carry some risk. Regular monitoring is recommended (Non-Cancerous).",
             "precautions": [
@@ -143,6 +143,7 @@ def predict():
         confidence = avg_pred if avg_pred >= 0.5 else 1 - avg_pred
 
         response = get_user_friendly_result(label, confidence)
+        response["score"] = round(float(confidence), 4)
         return jsonify(response)
 
     except Exception as e:
@@ -150,5 +151,5 @@ def predict():
         return jsonify({'error': 'Internal Server Error', 'details': str(e)}), 500
     
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+
