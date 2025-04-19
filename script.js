@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // fetch('http://localhost:5000/predict', {
             // fetch('https://skin-cancer-308g.onrender.com', {
-        fetch('https://skin-cancer-1-ejcm.onrender.com', {
+        fetch('https://skin-cancer-1-ejcm.onrender.com/predict', {
             method: 'POST',
             body: formData
         })
