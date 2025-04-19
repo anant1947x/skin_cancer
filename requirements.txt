@@ -1,5 +1,5 @@
 # Essential build tools
-setuptools>=42
+setuptools>=69.0.0
 wheel
 
 absl-py==2.2.2
