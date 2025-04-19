@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
                             <div class="recommendation">
                                 <div class="recommendation-title">Recommendation</div>
-                                <p>Please consult a dermatologist for further analysis and proper diagnosis.</p>
+                                <p>Please consult a dermatologist </p>
                             </div>
                         `;
                         resultContent.innerHTML = html;
