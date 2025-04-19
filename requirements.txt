@@ -1,7 +1,8 @@
 # Essential build tools
 setuptools>=69.0.0
-wheel
+wheel>=0.40.0
 
+# Required dependencies
 absl-py==2.2.2
 astunparse==1.6.3
 beautifulsoup4==4.13.3
@@ -46,7 +47,8 @@ MarkupSafe==3.0.2
 mdurl==0.1.2
 ml_dtypes==0.5.1
 namex==0.0.8
-numpy>=1.24.3,<1.26  # Loosened slightly, avoids 2.x risk
+# Fixed NumPy version to avoid build issues with Python 3.12
+numpy>=1.24.3,<1.25  # Updated to ensure no distutils issues on Python 3.12
 opencv-python-headless==4.8.0.76
 opt_einsum==3.4.0
 optree==0.15.0
